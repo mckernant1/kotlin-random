@@ -22,7 +22,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("reflect"))
-    implementation("com.github.mckernant1:kotlin-utils:0.0.19")
+    implementation("com.github.mckernant1:kotlin-utils:0.0.22")
     implementation("net.dv8tion:JDA:4.4.0_352")
 }
 
