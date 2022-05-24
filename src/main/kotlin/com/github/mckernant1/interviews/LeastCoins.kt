@@ -27,19 +27,16 @@ fun leastCoins(total: Int, dividers: List<Int>): MutableMap<Int, Int> {
         coinMap[it] = numberOfCoinToUse
     }
 
-    println("Partial coin map $coinMap")
 
     coinMap.forEach { (coin, count) ->
         // Get the dividers such that
-        // - the divider is not 1
-        // - the divider is not itself
-        // - the divider and the coin have an LCM less than the number of coins times value of coin AND the coin is bigger than current coin
+        // - the coin is bigger than current coin
+        // - the divider and the coin have an LCM less than the number of coins times value of coin
         // Get the biggest one
         val largerCoin = dividers
             .asSequence()
-            .filterNot { it == 1 }
-            .filterNot { it == coin }
-            .filter { it.lcm(coin) < coin * count && coin < it }
+            .filter { coin < it }
+            .filter { it.lcm(coin) < coin * count }
             .maxByOrNull { it } ?: return@forEach
 
         // Get the number of each coin to add and remove and do it
