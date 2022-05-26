@@ -1,10 +1,19 @@
 package com.github.mckernant1.interviews
 
+import com.github.mckernant1.assertions.Assertions.assertEquals
+import com.github.mckernant1.extensions.math.greatestCommonFactor
+import com.github.mckernant1.extensions.math.leastCommonMultiple
+
 
 fun main() {
     println("${leastCoins(8, listOf(5, 4, 1))} should be {4=2, 1=0, 5=0}")
+    assertEquals(leastCoins(8, listOf(5, 4, 1)), mapOf(4 to 2, 1 to 0, 5 to 0))
+
     println("${leastCoins(72, listOf(25, 10, 5, 1))} should be {10=2, 1=2, 5=0, 25=2}")
+    assertEquals(leastCoins(72, listOf(25, 10, 5, 1)), mapOf(10 to 2, 1 to 2, 5 to 0, 25 to 2))
+
     println("${leastCoins(11, listOf(3, 1, 5))} should be {1=1, 3=0, 5=2}")
+    assertEquals(leastCoins(11, listOf(3, 1, 5)), mapOf(1 to 1, 3 to 0, 5 to 2))
 }
 
 
@@ -15,7 +24,7 @@ fun leastCoins(total: Int, dividers: List<Int>): MutableMap<Int, Int> {
     val sortedDividers = dividers
         .asSequence()
         .sorted()
-        .sortedByDescending { it.gcf(total) }
+        .sortedByDescending { it.greatestCommonFactor(total) }
 
     var shrinkingTotal = total
     // Group the coins into a Map<Coin,Counter> where coins are added based on GCF with total.
@@ -36,7 +45,7 @@ fun leastCoins(total: Int, dividers: List<Int>): MutableMap<Int, Int> {
         val largerCoin = dividers
             .asSequence()
             .filter { coin < it }
-            .filter { it.lcm(coin) < coin * count }
+            .filter { it.leastCommonMultiple(coin) < coin * count }
             .maxByOrNull { it } ?: return@forEach
 
         // Get the number of each coin to add and remove and do it
@@ -48,12 +57,3 @@ fun leastCoins(total: Int, dividers: List<Int>): MutableMap<Int, Int> {
 
     return coinMap
 }
-
-
-fun Int.gcf(other: Int): Int = when {
-    this > other -> if (this % other == 0) other else other.gcf(this % other)
-    this < other -> if (other % this == 0) this else this.gcf(other % this)
-    else -> this
-}
-
-fun Int.lcm(other: Int) = (this * other) / this.gcf(other)
