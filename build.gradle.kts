@@ -49,6 +49,7 @@ files("src/main/kotlin")
     .asFileTree
     .files
     .asSequence()
+    .filter { it.readText().contains("fun main()") }
     .map { it.path }
     .filter { it.endsWith(".kt") }
     .map { it.removeSuffix(".kt") }
