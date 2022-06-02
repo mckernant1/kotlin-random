@@ -22,8 +22,18 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("reflect"))
+
     implementation("com.github.mckernant1:kotlin-utils:0.0.25")
+    implementation("com.github.mckernant1.lol:esports-api:0.0.11")
+
     implementation("net.dv8tion:JDA:4.4.0_352")
+
+    implementation("org.slf4j:slf4j-simple:1.7.36")
+
+    implementation(platform("software.amazon.awssdk:bom:2.17.+"))
+    implementation("software.amazon.awssdk:cloudwatch")
+    implementation("software.amazon.awssdk:dynamodb-enhanced")
+
 }
 
 tasks.test {
