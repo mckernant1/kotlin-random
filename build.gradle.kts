@@ -30,6 +30,8 @@ dependencies {
 
     implementation("org.slf4j:slf4j-simple:1.7.36")
 
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
+
     implementation(platform("software.amazon.awssdk:bom:2.17.+"))
     implementation("software.amazon.awssdk:cloudwatch")
     implementation("software.amazon.awssdk:dynamodb-enhanced")
