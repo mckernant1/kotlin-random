@@ -24,7 +24,7 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
 
-    implementation("com.github.mckernant1:kotlin-utils:0.0.25")
+    implementation("com.github.mckernant1:kotlin-utils:0.0.30")
     implementation("com.github.mckernant1.lol:esports-api:0.0.11")
 
     implementation("net.dv8tion:JDA:4.4.0_352")

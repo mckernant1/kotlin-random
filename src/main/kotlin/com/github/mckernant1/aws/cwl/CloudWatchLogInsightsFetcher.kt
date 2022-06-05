@@ -1,6 +1,6 @@
 package com.github.mckernant1.aws.cwl
 
-import kotlinx.coroutines.delay
+import com.github.mckernant1.standalone.delay
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import software.amazon.awssdk.services.cloudwatchlogs.CloudWatchLogsClient
@@ -50,7 +50,7 @@ class CloudWatchLogInsightsFetcher(
             val describe = cwl.getQueryResults {
                 it.queryId(query.queryId())
             }
-            delay(Duration.ofSeconds(3).toMillis())
+            delay(Duration.ofSeconds(3))
             logger.info("${query.queryId()} has status ${describe.status()}")
         } while (!describe.isQueryFinished())
         return cwl.getQueryResults { it.queryId(query.queryId()) }.results()
