@@ -22,6 +22,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("reflect"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
 
     implementation("com.github.mckernant1:kotlin-utils:0.0.25")
     implementation("com.github.mckernant1.lol:esports-api:0.0.11")
@@ -34,6 +35,7 @@ dependencies {
 
     implementation(platform("software.amazon.awssdk:bom:2.17.+"))
     implementation("software.amazon.awssdk:cloudwatch")
+    implementation("software.amazon.awssdk:cloudwatchlogs")
     implementation("software.amazon.awssdk:dynamodb-enhanced")
 
 }

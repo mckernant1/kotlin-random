@@ -1,5 +1,7 @@
 package com.github.mckernant1
 
-fun main() {
+import com.github.mckernant1.aws.cwl.CloudWatchInsightsQueries
 
+fun main() {
+    println(CloudWatchInsightsQueries.stringSearch("ERROR", "FATAL"))
 }
