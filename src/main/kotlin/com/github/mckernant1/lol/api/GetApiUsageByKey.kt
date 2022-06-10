@@ -1,6 +1,7 @@
 package com.github.mckernant1.lol.api
 
 import com.github.mckernant1.aws.cwl.CloudWatchLogInsightsFetcher
+import com.github.mckernant1.aws.cwl.toMap
 import kotlinx.coroutines.runBlocking
 import java.time.Instant
 import java.time.temporal.ChronoUnit
@@ -21,10 +22,11 @@ fun main(): Unit = runBlocking {
         startTime = Instant.now().minus(7, ChronoUnit.DAYS),
         endTime = Instant.now(),
         limit = 1000
-    ).mapNotNull {
+    ).mapNotNull { resultFields ->
+        val resultMap = resultFields.toMap()
         ApiKeyCount(
-            it.find { it.field() == "apiKey" }?.value() ?: return@mapNotNull null,
-            it.find { it.field() == "keyCount" }?.value()?.toIntOrNull() ?: return@mapNotNull null
+            resultMap["apiKey"] ?: return@mapNotNull null,
+            resultMap["keyCount"]?.toIntOrNull() ?: return@mapNotNull null
         )
     }.forEach {
         println("${it.apiKey} - ${it.count}")

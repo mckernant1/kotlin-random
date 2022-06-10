@@ -1,5 +1,6 @@
 package com.github.mckernant1.lol.predictionsbot
 
+import com.github.mckernant1.lol.predictionsbot.model.UserSettings
 import java.util.TimeZone
 
 fun main() {

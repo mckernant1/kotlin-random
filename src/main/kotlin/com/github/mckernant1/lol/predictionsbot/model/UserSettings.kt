@@ -1,4 +1,4 @@
-package com.github.mckernant1.lol.predictionsbot
+package com.github.mckernant1.lol.predictionsbot.model
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper

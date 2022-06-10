@@ -1,8 +1,7 @@
-package com.github.mckernant1.lol.predictionsbot
+package com.github.mckernant1.lol.predictionsbot.model
 
 import com.github.mckernant1.aws.ddbEnhanced
 import kotlin.streams.asSequence
-import kotlin.streams.toList
 import software.amazon.awssdk.enhanced.dynamodb.Key
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttribute

@@ -2,6 +2,7 @@ package com.github.mckernant1.aws.cwl
 
 import software.amazon.awssdk.services.cloudwatchlogs.model.GetQueryResultsResponse
 import software.amazon.awssdk.services.cloudwatchlogs.model.QueryStatus
+import software.amazon.awssdk.services.cloudwatchlogs.model.ResultField
 
 fun GetQueryResultsResponse.isQueryFinished(): Boolean = when (this.status()) {
     QueryStatus.SCHEDULED -> false
@@ -14,3 +15,7 @@ fun GetQueryResultsResponse.isQueryFinished(): Boolean = when (this.status()) {
     QueryStatus.UNKNOWN_TO_SDK_VERSION -> throw Exception("Unknown status for Query")
     else -> throw Exception("Null status for Query")
 }
+
+fun List<ResultField>.toMap(): Map<String, String> = this.associate { it.field() to it.value() }
+
+fun List<ResultField>.findValue(key: String) = this.find { it.field() == key }

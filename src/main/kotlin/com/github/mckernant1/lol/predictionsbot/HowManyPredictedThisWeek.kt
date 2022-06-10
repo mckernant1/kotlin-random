@@ -3,6 +3,7 @@ package com.github.mckernant1.lol.predictionsbot
 import com.github.mckernant1.lol.api.startTimeAsInstant
 import com.github.mckernant1.lol.esportsApi
 import com.github.mckernant1.lol.logger
+import com.github.mckernant1.lol.predictionsbot.model.Prediction
 import java.time.Duration
 import java.time.Instant
 
