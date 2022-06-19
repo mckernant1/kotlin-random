@@ -1,5 +1,8 @@
 package com.github.mckernant1.lol
 
+import com.github.mckernant1.aws.ddbClient
+import com.github.mckernant1.lol.blitzcrank.models.PredictionsAccess
+import com.github.mckernant1.lol.blitzcrank.models.UserSettingsAccess
 import com.github.mckernant1.lol.esports.api.ApiClient
 import com.github.mckernant1.lol.esports.api.client.DefaultApi
 import okhttp3.OkHttpClient
@@ -20,4 +23,13 @@ internal val esportsApi = DefaultApi(
 
 internal val logger by lazy {
     LoggerFactory.getLogger("LolLogger")
+}
+
+
+internal val predictionAccess by lazy {
+    PredictionsAccess(ddbClient)
+}
+
+internal val userSettingsAccess by lazy {
+    UserSettingsAccess(ddbClient)
 }

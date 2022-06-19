@@ -22,10 +22,11 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation(kotlin("reflect"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
 
     implementation("com.github.mckernant1:kotlin-utils:0.0.30")
     implementation("com.github.mckernant1.lol:esports-api:0.0.11")
+    implementation("com.github.mckernant1.lol.blitzcrank:lol-predictions-bot-models:0.0.1")
 
     implementation("net.dv8tion:JDA:4.4.0_352")
 
@@ -33,7 +34,7 @@ dependencies {
 
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
 
-    implementation(platform("software.amazon.awssdk:bom:2.17.+"))
+    implementation(platform("software.amazon.awssdk:bom:2.17.204"))
     implementation("software.amazon.awssdk:cloudwatch")
     implementation("software.amazon.awssdk:cloudwatchlogs")
     implementation("software.amazon.awssdk:dynamodb-enhanced")

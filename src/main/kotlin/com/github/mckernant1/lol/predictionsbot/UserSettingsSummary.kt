@@ -1,11 +1,11 @@
 package com.github.mckernant1.lol.predictionsbot
 
-import com.github.mckernant1.lol.predictionsbot.model.UserSettings
+import com.github.mckernant1.lol.userSettingsAccess
 import java.util.TimeZone
 
 fun main() {
 
-    val settings = UserSettings.scan()
+    val settings = userSettingsAccess.scan()
         .toList()
 
     val settingsByTZ = settings
