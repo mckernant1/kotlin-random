@@ -46,6 +46,17 @@ class CloudWatchLogInsightsFetcher(
             it.queryString(queryString)
         }
 
+        logger.info("""Starting Query with params
+logGroupName: $logGroupName
+startTime: $startTime
+endTime: $endTime
+limit: $limit
+query: 
+$queryString
+        """.trimIndent())
+        println()
+        println()
+
         do {
             val describe = cwl.getQueryResults {
                 it.queryId(query.queryId())
