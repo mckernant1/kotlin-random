@@ -1,4 +1,4 @@
-package com.github.mckernant1.discord
+package com.mckernant1.discord
 
 import kotlin.system.exitProcess
 import net.dv8tion.jda.api.entities.MessageHistory

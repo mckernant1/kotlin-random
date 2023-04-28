@@ -1,4 +1,4 @@
-package com.github.mckernant1.lol.api
+package com.mckernant1.lol.api
 
 import com.github.mckernant1.lol.esports.api.models.Match
 import com.github.mckernant1.lol.esports.api.models.Tournament

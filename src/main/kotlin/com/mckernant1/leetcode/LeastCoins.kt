@@ -1,8 +1,8 @@
-package com.github.mckernant1.interviews
+package com.mckernant1.leetcode
 
 import com.github.mckernant1.assertions.Assertions.assertEquals
-import com.github.mckernant1.extensions.math.greatestCommonFactor
-import com.github.mckernant1.extensions.math.leastCommonMultiple
+import com.github.mckernant1.extensions.math.IntAlgebra.greatestCommonFactor
+import com.github.mckernant1.extensions.math.IntAlgebra.leastCommonMultiple
 
 
 fun main() {

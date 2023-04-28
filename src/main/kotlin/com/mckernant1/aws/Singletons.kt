@@ -1,4 +1,4 @@
-package com.github.mckernant1.aws
+package com.mckernant1.aws
 
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
 import software.amazon.awssdk.services.cloudwatchlogs.CloudWatchLogsClient

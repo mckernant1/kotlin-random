@@ -1,4 +1,4 @@
-package com.github.mckernant1.aws.cwl
+package com.mckernant1.aws.cwl
 
 import com.github.mckernant1.standalone.delay
 import org.slf4j.Logger

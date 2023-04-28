@@ -1,4 +1,4 @@
-package com.github.mckernant1.aws.cwl
+package com.mckernant1.aws.cwl
 
 object CloudWatchInsightsQueries {
 

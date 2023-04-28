@@ -1,7 +1,7 @@
-package com.github.mckernant1.lol.api
+package com.mckernant1.lol.api
 
-import com.github.mckernant1.aws.cwl.CloudWatchLogInsightsFetcher
-import com.github.mckernant1.aws.cwl.toMap
+import com.mckernant1.aws.cwl.CloudWatchLogInsightsFetcher
+import com.mckernant1.aws.cwl.toMap
 import kotlinx.coroutines.runBlocking
 import java.time.Instant
 import java.time.temporal.ChronoUnit

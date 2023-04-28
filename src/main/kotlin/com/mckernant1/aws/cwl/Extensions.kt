@@ -1,4 +1,4 @@
-package com.github.mckernant1.aws.cwl
+package com.mckernant1.aws.cwl
 
 import software.amazon.awssdk.services.cloudwatchlogs.model.GetQueryResultsResponse
 import software.amazon.awssdk.services.cloudwatchlogs.model.QueryStatus
@@ -18,4 +18,4 @@ fun GetQueryResultsResponse.isQueryFinished(): Boolean = when (this.status()) {
 
 fun List<ResultField>.toMap(): Map<String, String> = this.associate { it.field() to it.value() }
 
-fun List<ResultField>.findValue(key: String) = this.find { it.field() == key }
+operator fun List<ResultField>.get(key: String): ResultField? = this.find { it.field() == key }
