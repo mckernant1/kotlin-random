@@ -15,7 +15,7 @@ fun main() {
 
 }
 
-class LRUCache(private val maxSize: Int) {
+private class LRUCache(private val maxSize: Int) {
 
     private val values = mutableMapOf<String, String>()
     private val lruMap = mutableMapOf<String, Int>()

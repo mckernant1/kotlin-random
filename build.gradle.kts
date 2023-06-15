@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "1.8.20"
     application
 }
 
@@ -25,18 +25,23 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
 
-    implementation("com.github.mckernant1:kotlin-utils:0.0.39")
-    implementation("com.github.oscar0812:pokeapi:1.0.0")
+    // My Libs
+    implementation("com.mckernant1.commons:kotlin-utils:0.2.1")
     implementation("com.mckernant1:event-scheduler:0.0.2")
-    implementation("com.github.mckernant1.lol:esports-api:0.0.19")
+    implementation("com.mckernant1.lol:esports-api:0.1.0")
     implementation("com.github.mckernant1.lol.blitzcrank:lol-predictions-bot-models:0.0.1")
 
+    // Discord
     implementation("net.dv8tion:JDA:4.4.0_352")
 
-    implementation("org.slf4j:slf4j-simple:1.7.36")
+    // Sql
+    implementation("org.ktorm:ktorm-core:3.6.0")
 
+    // Logging + Utils
+    implementation("org.slf4j:slf4j-simple:1.7.36")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
 
+    // AWS
     implementation(platform("software.amazon.awssdk:bom:2.17.204"))
     implementation("software.amazon.awssdk:cloudwatch")
     implementation("software.amazon.awssdk:cloudwatchlogs")
@@ -49,7 +54,7 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "17"
 }
 
 

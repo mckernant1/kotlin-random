@@ -4,7 +4,7 @@ fun main() {
     println(permute(intArrayOf(1, 2, 3)))
 }
 
-fun permute(numsInit: IntArray): List<List<Int>> {
+private fun permute(numsInit: IntArray): List<List<Int>> {
     val nums = numsInit.toMutableList()
     while (nums.size < 6) {
         nums.add(-100)

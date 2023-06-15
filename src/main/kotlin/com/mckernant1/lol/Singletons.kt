@@ -1,10 +1,10 @@
 package com.mckernant1.lol
 
-import com.mckernant1.aws.ddbClient
 import com.github.mckernant1.lol.blitzcrank.models.PredictionsAccess
 import com.github.mckernant1.lol.blitzcrank.models.UserSettingsAccess
-import com.github.mckernant1.lol.esports.api.ApiClient
-import com.github.mckernant1.lol.esports.api.client.DefaultApi
+import com.mckernant1.aws.ddbClient
+import com.mckernant1.lol.esports.api.ApiClient
+import com.mckernant1.lol.esports.api.client.DefaultApi
 import okhttp3.OkHttpClient
 import org.slf4j.LoggerFactory
 import java.time.Duration

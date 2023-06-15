@@ -9,9 +9,6 @@ package com.mckernant1.leetcode
  *
  * Return the number of bulbs that are on after n rounds.
  *
- *
- *
- *
  */
 
 fun main() {
@@ -22,7 +19,7 @@ fun main() {
     println(bulbSwitch(25))
 }
 
-fun bulbSwitch(n: Int): Int {
+private fun bulbSwitch(n: Int): Int {
     if (n == 0) return 0
 
     var skipNum = 2

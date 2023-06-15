@@ -7,7 +7,7 @@ fun main() {
     println(intToRoman(1994))
 }
 
-fun intToRoman(num: Int): String {
+private fun intToRoman(num: Int): String {
 
     var s = ""
     val thousands = num / 1000
@@ -16,7 +16,7 @@ fun intToRoman(num: Int): String {
     s += (1..thousands).joinToString("") { "M" }
 
     val hundreds = remain / 100
-    remain = remain - (hundreds * 100)
+    remain -= (hundreds * 100)
     s += when (hundreds) {
         9 -> "CM"
         4 -> "CD"
@@ -26,7 +26,7 @@ fun intToRoman(num: Int): String {
     }
 
     val tens = remain / 10
-    remain = remain - (tens * 10)
+    remain -= (tens * 10)
     s += when (tens) {
         9 -> "XC"
         4 -> "XL"
@@ -45,9 +45,4 @@ fun intToRoman(num: Int): String {
     }
 
     return s
-}
-
-fun getDigitAtPosition(num: Int, position: Int) {
-
-
 }

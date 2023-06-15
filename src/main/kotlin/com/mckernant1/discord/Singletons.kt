@@ -1,6 +1,6 @@
 package com.mckernant1.discord
 
-import com.github.mckernant1.assertions.Assertions.assertEnvironmentVariablesExist
+import com.mckernant1.commons.assertions.Assertions.assertEnvironmentVariablesExist
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 

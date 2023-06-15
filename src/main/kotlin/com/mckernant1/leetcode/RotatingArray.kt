@@ -1,7 +1,7 @@
 package com.mckernant1.leetcode
 
 
-fun main() {
+private fun main() {
     val r = RotatingArray(5)
     r.add(1)
     r.add(2)

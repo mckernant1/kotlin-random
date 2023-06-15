@@ -16,7 +16,7 @@ fun main() {
 //    println(isMatch("aab", "c*a*b"))
 }
 
-fun isMatch(input: String, pattern: String): Boolean {
+private fun isMatch(input: String, pattern: String): Boolean {
     if (pattern == ".*") return true
     return if (input.length <= 1 && pattern.length <= 1) {
         println("Matching $input == $pattern")

@@ -6,7 +6,7 @@ fun main() {
     println(threeSum(intArrayOf(-1, 0, 1, 2, -1, -4)))
 }
 
-fun threeSum(nums: IntArray): List<List<Int>> {
+private fun threeSum(nums: IntArray): List<List<Int>> {
     val nums = nums.sorted()
     var middle = nums.size / 2
     var l = middle - 1

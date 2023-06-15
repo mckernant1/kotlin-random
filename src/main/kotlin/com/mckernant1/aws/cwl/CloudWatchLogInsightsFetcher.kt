@@ -1,6 +1,6 @@
 package com.mckernant1.aws.cwl
 
-import com.github.mckernant1.standalone.delay
+import com.mckernant1.commons.standalone.delay
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import software.amazon.awssdk.services.cloudwatchlogs.CloudWatchLogsClient

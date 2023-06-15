@@ -7,7 +7,7 @@ fun main() {
 }
 
 
-fun maxArea(height: IntArray): Int {
+private fun maxArea(height: IntArray): Int {
     val end = height.size
 
     var max = 0

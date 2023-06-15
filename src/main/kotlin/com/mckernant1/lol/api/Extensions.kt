@@ -1,10 +1,10 @@
 package com.mckernant1.lol.api
 
-import com.github.mckernant1.lol.esports.api.models.Match
-import com.github.mckernant1.lol.esports.api.models.Tournament
+import com.mckernant1.lol.esports.api.models.Match
+import com.mckernant1.lol.esports.api.models.Tournament
 import java.text.SimpleDateFormat
 import java.time.Instant
-import java.util.Date
+import java.util.*
 
 fun List<Match>.filterPastMatches() = filter {
     it.startTimeAsInstant().isBefore(Instant.now())

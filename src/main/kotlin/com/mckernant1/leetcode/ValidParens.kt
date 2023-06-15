@@ -8,7 +8,7 @@ fun main() {
     println(isValid("(]"))
 }
 
-fun isValid(str: String): Boolean {
+private fun isValid(str: String): Boolean {
     val s = Stack<Char>()
     val openers = listOf('(', '[', '{')
 
