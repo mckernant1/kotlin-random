@@ -38,8 +38,13 @@ dependencies {
     implementation("org.ktorm:ktorm-core:3.6.0")
 
     // Logging + Utils
-    implementation("org.slf4j:slf4j-simple:1.7.36")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
+    implementation("org.slf4j:slf4j-api:2.0.5")
+    implementation("org.apache.logging.log4j:log4j-core:2.20.0")
+    implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.20.0")
+    implementation("org.apache.logging.log4j:log4j-slf4j2-impl:2.20.0")
+
+    // Utils
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4.1")
 
     // AWS
     implementation(platform("software.amazon.awssdk:bom:2.17.204"))
