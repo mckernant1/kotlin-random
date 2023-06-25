@@ -44,7 +44,7 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-slf4j2-impl:2.20.0")
 
     // Utils
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4")
 
     // AWS
     implementation(platform("software.amazon.awssdk:bom:2.17.204"))
