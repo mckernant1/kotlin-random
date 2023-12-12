@@ -11,7 +11,7 @@ fun main(): Unit = runBlocking {
 
     fetcher.fetch(
         "/ecs/lol-predictions-bot",
-        CloudWatchInsightsQueries.regexSearch(Regex("(?i)(ERROR|EXCEPTION)")),
+        CloudWatchInsightsQueries.regexSearch(Regex("ERROR")),
         startTime = Instant.now().minus(7, ChronoUnit.DAYS),
         endTime = Instant.now(),
         limit = 100
