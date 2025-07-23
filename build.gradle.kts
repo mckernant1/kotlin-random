@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "com.github.mckernant1"
+group = "com.mckernant1"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -30,6 +30,9 @@ dependencies {
     implementation("com.mckernant1:event-scheduler:0.0.2")
     implementation("com.mckernant1.lol:esports-api:0.1.0")
     implementation("com.github.mckernant1.lol.blitzcrank:lol-predictions-bot-models:0.0.1")
+
+    // Test libs
+    implementation("io.projectreactor:reactor-core:3.6.3")
 
     // Discord
     implementation("net.dv8tion:JDA:4.4.0_352")
