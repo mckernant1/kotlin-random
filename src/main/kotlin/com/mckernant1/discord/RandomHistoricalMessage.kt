@@ -6,9 +6,9 @@ import com.mckernant1.commons.standalone.measureOperation
 import kotlinx.coroutines.runBlocking
 import net.dv8tion.jda.api.entities.Message
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel
+import net.dv8tion.jda.api.utils.TimeUtil
 import java.time.*
 import java.time.temporal.ChronoUnit
-import java.util.concurrent.atomic.AtomicInteger
 import kotlin.random.Random
 import kotlin.system.exitProcess
 
@@ -17,28 +17,21 @@ fun getRandomMessages(
     channel: MessageChannel,
     randomDay: Instant
 ): List<Message> {
-    val randomNextDay = randomDay + Duration.ofDays(1)
+    val randomNextDay = (randomDay + Duration.ofDays(1)).atOffset(ZoneOffset.UTC)
 
-    val (duration, out) = measureOperation {
+    val (duration, messages) = measureOperation {
         println("Looking through message history...")
-        val counter = AtomicInteger(0)
         val messages = channel.iterableHistory
             .reverse()
-            .asSequence()
-            .dropWhile {
-                counter.incrementAndGet()
-                it.timeCreated.isBefore(randomDay.atOffset(ZoneOffset.UTC))
-            }.takeWhile {
-                it.timeCreated.isBefore(randomNextDay.atOffset(ZoneOffset.UTC))
+            .skipTo(
+                TimeUtil.getDiscordTimestamp(randomDay.toEpochMilli())
+            ).takeWhile {
+                it.timeCreated.isBefore(randomNextDay)
             }
-            .toList()
-
-        Pair(messages, counter)
+        messages
     }
 
-    val (messages, counter) = out
-
-    println("Finished getting messages. Took ${duration.format()}. Found ${messages.size} messages. Checked $counter items.")
+    println("Finished getting messages. Took ${duration.format()}. Found ${messages.size} messages.")
 
     return messages
 
@@ -70,7 +63,7 @@ fun main(): Unit = runBlocking {
 
     val randomMessage = messages.randomOrNull()
 
-    println(
+    channel.sendMessage(
         """
         On ${LocalDate.ofInstant(randomDay, ZoneOffset.UTC)} there were ${messages.size} messages sent
         Who sent the following message:
@@ -79,7 +72,7 @@ fun main(): Unit = runBlocking {
         Spoilers: ||${randomMessage?.author?.name}||
         Link: ||${randomMessage?.jumpUrl}||
     """.trimIndent()
-    )
+    ).complete()
 
     exitProcess(0)
 }
