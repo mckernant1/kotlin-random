@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.8.20"
+    kotlin("jvm") version "2.1.10"
     application
 }
 
@@ -35,7 +35,9 @@ dependencies {
     implementation("io.projectreactor:reactor-core:3.6.3")
 
     // Discord
-    implementation("net.dv8tion:JDA:4.4.0_352")
+    implementation("net.dv8tion:JDA:6.1.1") {
+        exclude(module = "opus-java")
+    }
 
     // Sql
     implementation("org.ktorm:ktorm-core:3.6.0")
@@ -47,7 +49,7 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-slf4j2-impl:2.20.0")
 
     // Utils
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1")
 
     // AWS
     implementation(platform("software.amazon.awssdk:bom:2.17.204"))
@@ -59,10 +61,6 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
 }
 
 
