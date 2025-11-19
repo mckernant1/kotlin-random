@@ -48,8 +48,7 @@ fun main(): Unit = runBlocking {
     val channel = guild.getTextChannelById("1098823902899212298")
         ?: throw RuntimeException("Could not find a channel")
 
-    val start = LocalDateTime.of(2020, 1, 1, 0, 0, 0)
-        .toInstant(ZoneOffset.UTC)
+    val start = channel.timeCreated.toInstant()
     val end = Instant.now() - Duration.ofDays(365)
 
     var messages = emptyList<Message>()
